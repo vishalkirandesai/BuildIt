@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_biz_buildit_main_PlantCatalogue" object="${plantcatalogue}" path="/plantcatalogues" z="pgcquK/+nRAs46Dk14FlTE3QFdc=">
+        <field:display field="id" id="s_biz_buildit_main_PlantCatalogue_id" object="${plantcatalogue}" z="idtdAgHFXZWCVtBOkDHQVWFL5s8="/>
+        <field:display field="price" id="s_biz_buildit_main_PlantCatalogue_price" object="${plantcatalogue}" z="SHbx4jJwCr2v/BfMCxh/JCf6FKs="/>
+        <field:display field="description" id="s_biz_buildit_main_PlantCatalogue_description" object="${plantcatalogue}" z="Q18nQwe3LrejwIEx3jhIh1vHcIk="/>
+        <field:display date="true" dateTimePattern="${plantCatalogue_startdate_date_format}" field="startDate" id="s_biz_buildit_main_PlantCatalogue_startDate" object="${plantcatalogue}" z="PnXIzrlK+rEL7Pml0aTaDdPI5Xk="/>
+        <field:display date="true" dateTimePattern="${plantCatalogue_enddate_date_format}" field="endDate" id="s_biz_buildit_main_PlantCatalogue_endDate" object="${plantcatalogue}" z="/PsoUWuz4TbZPgzvoy+xDZWOPsk="/>
+    </page:show>
+</div>

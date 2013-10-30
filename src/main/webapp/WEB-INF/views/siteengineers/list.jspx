@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_biz_buildit_main_SiteEngineer" items="${siteengineers}" z="lpHUMaCI2KelLzI/iEjTMbBN1Rw=">
+        <table:table data="${siteengineers}" id="l_biz_buildit_main_SiteEngineer" path="/siteengineers" typeIdFieldName="id_" z="YBq4HqN9g/YUo/2BJ8R/GDiOoEA=">
+            <table:column id="c_biz_buildit_main_SiteEngineer_id" property="id" z="79GqMLwq4Y65iK/fDF2sQIA/a1A="/>
+            <table:column id="c_biz_buildit_main_SiteEngineer_name" property="name" z="9dFuJUn95ebS2iELJRfwAx1Gx0U="/>
+        </table:table>
+    </page:list>
+</div>
