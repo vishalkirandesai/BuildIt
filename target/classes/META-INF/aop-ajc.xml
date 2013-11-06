@@ -1,0 +1,36 @@
+<aspectj>
+<aspects>
+<aspect name="biz.buildit.main.SiteEngineer_Roo_JavaBean"/>
+<aspect name="biz.buildit.main.PlantHireRequest_Roo_ToString"/>
+<aspect name="biz.buildit.web.WorksEngineerController_Roo_Controller"/>
+<aspect name="biz.buildit.main.Invoice_Roo_ToString"/>
+<aspect name="biz.buildit.main.WorksEngineer_Roo_JavaBean"/>
+<aspect name="biz.buildit.main.SiteEngineer_Roo_Configurable"/>
+<aspect name="biz.buildit.main.PlantHireRequest_Roo_Jpa_Entity"/>
+<aspect name="biz.buildit.web.PlantHireRequestController_Roo_Controller"/>
+<aspect name="biz.buildit.main.PlantCatalogue_Roo_ToString"/>
+<aspect name="biz.buildit.main.SiteEngineer_Roo_Jpa_Entity"/>
+<aspect name="biz.buildit.main.Invoice_Roo_Jpa_ActiveRecord"/>
+<aspect name="biz.buildit.main.SiteEngineer_Roo_Jpa_ActiveRecord"/>
+<aspect name="biz.buildit.web.PlantCatalogueController_Roo_Controller"/>
+<aspect name="biz.buildit.main.SiteEngineer_Roo_ToString"/>
+<aspect name="biz.buildit.main.Invoice_Roo_JavaBean"/>
+<aspect name="biz.buildit.main.Invoice_Roo_Jpa_Entity"/>
+<aspect name="biz.buildit.main.WorksEngineer_Roo_Jpa_ActiveRecord"/>
+<aspect name="biz.buildit.main.PlantHireRequest_Roo_Configurable"/>
+<aspect name="biz.buildit.main.WorksEngineer_Roo_Configurable"/>
+<aspect name="biz.buildit.main.WorksEngineer_Roo_Jpa_Entity"/>
+<aspect name="biz.buildit.main.PlantCatalogue_Roo_Configurable"/>
+<aspect name="biz.buildit.main.WorksEngineer_Roo_ToString"/>
+<aspect name="biz.buildit.web.InvoiceController_Roo_Controller"/>
+<aspect name="biz.buildit.web.ApplicationConversionServiceFactoryBean_Roo_ConversionService"/>
+<aspect name="biz.buildit.main.PlantCatalogue_Roo_JavaBean"/>
+<aspect name="biz.buildit.main.PlantCatalogue_Roo_Jpa_ActiveRecord"/>
+<aspect name="biz.buildit.web.SiteEngineerController_Roo_Controller"/>
+<aspect name="biz.buildit.main.PlantHireRequest_Roo_JavaBean"/>
+<aspect name="biz.buildit.main.PlantHireRequest_Roo_Jpa_ActiveRecord"/>
+<aspect name="biz.buildit.main.Invoice_Roo_Configurable"/>
+<aspect name="biz.buildit.main.PlantCatalogue_Roo_Jpa_Entity"/>
+</aspects>
+</aspectj>
+
