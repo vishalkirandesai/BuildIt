@@ -7,14 +7,6 @@
             <menu:item id="i_siteengineer_new" messageCode="global_menu_new" url="/siteengineers?form" z="73MDcGEekK1/OA5vq9yOzuGF2bw="/>
             <menu:item id="i_siteengineer_list" messageCode="global_menu_list" url="/siteengineers?page=1&amp;size=${empty param.size ? 10 : param.size}" z="+9FMZynjARRy/GppxBem/QpLUFc="/>
         </menu:category>
-        <menu:category id="c_invoice" z="J8t31gESmLmp6i5o6ds0/j0AMNA=">
-            <menu:item id="i_invoice_new" messageCode="global_menu_new" url="/invoices?form" z="QqwPSYJNNoLrSbh5ekf/V1j0eU8="/>
-            <menu:item id="i_invoice_list" messageCode="global_menu_list" url="/invoices?page=1&amp;size=${empty param.size ? 10 : param.size}" z="fGp1lAWegbSUAHpxuhrzXY9RQGI="/>
-        </menu:category>
-        <menu:category id="c_plantcatalogue" z="Hl9fporZ7RoZhR/MkNjyoVkv1h8=">
-            <menu:item id="i_plantcatalogue_new" messageCode="global_menu_new" url="/plantcatalogues?form" z="byGD5Ur0fKYF/BTtFd/sJV97ENc="/>
-            <menu:item id="i_plantcatalogue_list" messageCode="global_menu_list" url="/plantcatalogues?page=1&amp;size=${empty param.size ? 10 : param.size}" z="Lyfj2oaLEGqEajg+/2xoanH413M="/>
-        </menu:category>
         <menu:category id="c_planthirerequest" z="RYvAYDPxevYbz1bZdWQ+gP48NkM=">
             <menu:item id="i_planthirerequest_new" messageCode="global_menu_new" url="/planthirerequests?form" z="2UJa6OsIGq8KjyoRwfUWitDoACc="/>
             <menu:item id="i_planthirerequest_list" messageCode="global_menu_list" url="/planthirerequests?page=1&amp;size=${empty param.size ? 10 : param.size}" z="2JxNOtXt5o0uGGZoGnixGDWO11c="/>
