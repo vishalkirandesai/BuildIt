@@ -16,6 +16,14 @@ privileged aspect PlantCatalogue_Roo_JavaBean {
         this.id = id;
     }
     
+    public String PlantCatalogue.getName() {
+        return this.name;
+    }
+    
+    public void PlantCatalogue.setName(String name) {
+        this.name = name;
+    }
+    
     public int PlantCatalogue.getPrice() {
         return this.price;
     }

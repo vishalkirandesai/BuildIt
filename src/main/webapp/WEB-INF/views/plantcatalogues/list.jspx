@@ -9,6 +9,7 @@
             <table:column id="c_biz_buildit_main_PlantCatalogue_description" property="description" z="+ZDHXbfI9EsWdtAWFXfiZaCyMoQ="/>
             <table:column date="true" dateTimePattern="${plantCatalogue_startdate_date_format}" id="c_biz_buildit_main_PlantCatalogue_startDate" property="startDate" z="kvSqGH6RwHuuqQp6hUZal5d3WgM="/>
             <table:column date="true" dateTimePattern="${plantCatalogue_enddate_date_format}" id="c_biz_buildit_main_PlantCatalogue_endDate" property="endDate" z="Q+hE8jWJWOMWS2WbmWCo5n7cWPM="/>
+            <table:column id="c_biz_buildit_main_PlantCatalogue_name" property="name" z="dpsnKxgeDbf8r5yYlt/6Z/iD1F0="/>
         </table:table>
     </page:list>
 </div>

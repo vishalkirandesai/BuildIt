@@ -4,7 +4,7 @@
     <jsp:output omit-xml-declaration="yes"/>
     <form:create id="fc_biz_buildit_main_Invoice" modelAttribute="invoice" path="/invoices" render="${empty dependencies}" z="ZN5D0kZs05iXukcuC46ndCKg0lg=">
         <field:input field="id" id="c_biz_buildit_main_Invoice_id" z="7ise6t7VxWnEVVTSLSrI7mGjpAI="/>
-        <field:select field="phrId" id="c_biz_buildit_main_Invoice_phrId" itemValue="id_" items="${planthirerequests}" path="/planthirerequests" z="A1Ck3nu+nhk6VI4Z1nKPJXThXg4="/>
+        <field:select field="phrId" id="c_biz_buildit_main_Invoice_phrId" itemValue="id" items="${planthirerequests}" path="/planthirerequests" z="dH3JwVmHBX7+2/tx3zrISKmOJRs="/>
         <field:datetime dateTimePattern="${invoice_duedate_date_format}" field="dueDate" id="c_biz_buildit_main_Invoice_dueDate" z="ZEluemeWL6mH4tpssssvHrpLmYM="/>
         <field:input field="approval" id="c_biz_buildit_main_Invoice_approval" z="qOBJCMN6Aw+CV/hrR5Vrjknq46U="/>
     </form:create>

@@ -17,6 +17,8 @@ public class PlantCatalogue {
     /**
      */
     private int id;
+    
+    private String name;
 
     /**
      */

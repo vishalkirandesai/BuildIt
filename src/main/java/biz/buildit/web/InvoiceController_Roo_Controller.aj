@@ -4,12 +4,13 @@
 package biz.buildit.web;
 
 import biz.buildit.main.Invoice;
-import biz.buildit.main.PlantHireRequest;
+import biz.buildit.repository.PlantHireRequestRepository;
 import biz.buildit.web.InvoiceController;
 import java.io.UnsupportedEncodingException;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import org.joda.time.format.DateTimeFormat;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -21,6 +22,9 @@ import org.springframework.web.util.UriUtils;
 import org.springframework.web.util.WebUtils;
 
 privileged aspect InvoiceController_Roo_Controller {
+    
+    @Autowired
+    PlantHireRequestRepository InvoiceController.plantHireRequestRepository;
     
     @RequestMapping(method = RequestMethod.POST, produces = "text/html")
     public String InvoiceController.create(@Valid Invoice invoice, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
@@ -96,7 +100,7 @@ privileged aspect InvoiceController_Roo_Controller {
     void InvoiceController.populateEditForm(Model uiModel, Invoice invoice) {
         uiModel.addAttribute("invoice", invoice);
         addDateTimeFormatPatterns(uiModel);
-        uiModel.addAttribute("planthirerequests", PlantHireRequest.findAllPlantHireRequests());
+        uiModel.addAttribute("planthirerequests", plantHireRequestRepository.findAll());
     }
     
     String InvoiceController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

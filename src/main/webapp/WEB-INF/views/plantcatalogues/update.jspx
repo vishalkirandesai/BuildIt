@@ -8,5 +8,6 @@
         <field:input field="description" id="c_biz_buildit_main_PlantCatalogue_description" z="CrnbSnNaKMxHga9EDiZdrRPcjCg="/>
         <field:datetime dateTimePattern="${plantCatalogue_startdate_date_format}" field="startDate" id="c_biz_buildit_main_PlantCatalogue_startDate" z="AQptANFm0bcWUdYaoEkO4iB3eFk="/>
         <field:datetime dateTimePattern="${plantCatalogue_enddate_date_format}" field="endDate" id="c_biz_buildit_main_PlantCatalogue_endDate" z="D1VJf8fR6Oi+WpSfVshTLl/oFGk="/>
+        <field:input field="name" id="c_biz_buildit_main_PlantCatalogue_name" z="SNEJV2Qq2MYkujgiA5SLnREwkN8="/>
     </form:update>
 </div>

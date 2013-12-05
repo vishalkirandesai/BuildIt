@@ -3,7 +3,6 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <form:create id="fc_biz_buildit_main_PlantHireRequest" modelAttribute="plantHireRequest" path="/planthirerequests" render="${empty dependencies}" z="oH5lxRg3FDVsSLGs72DbK9bH/7k=">
-        <field:input field="id" id="c_biz_buildit_main_PlantHireRequest_id" z="Dwmkz/adlK8KyFGXbaMEpTIiXj0="/>
         <field:input field="siteId" id="c_biz_buildit_main_PlantHireRequest_siteId" z="32vuBkVlJ/6RCi0wjsw5C+HCkbE="/>
         <field:select field="engId" id="c_biz_buildit_main_PlantHireRequest_engId" itemValue="id_" items="${siteengineers}" path="/siteengineers" z="URUXVHguaCnLeqXoa7pJIgepaXY="/>
         <field:datetime dateTimePattern="${plantHireRequest_startdate_date_format}" field="startDate" id="c_biz_buildit_main_PlantHireRequest_startDate" z="LKCbgRoKCcHkOmNQfk336aV+q3o="/>
@@ -11,9 +10,9 @@
         <field:datetime dateTimePattern="${plantHireRequest_extensiondate_date_format}" field="extensionDate" id="c_biz_buildit_main_PlantHireRequest_extensionDate" z="t0CimUxOmmVLHdOzqU919GVUC2k="/>
         <field:input field="price" id="c_biz_buildit_main_PlantHireRequest_price" z="SmwlHe8zKl+hG9O8K9m8GhZWlDA="/>
         <field:input field="comments" id="c_biz_buildit_main_PlantHireRequest_comments" z="s9Pn7vbc7w5YcrlQU5XP8TI/J9w="/>
-        <field:input field="approval" id="c_biz_buildit_main_PlantHireRequest_approval" z="RKuPFA9UN8mR25EtsAmsoOamecU="/>
         <field:select field="plantId" id="c_biz_buildit_main_PlantHireRequest_plantId" itemValue="id_" items="${plantcatalogues}" path="/plantcatalogues" z="DElKiJWMJcTz7zbu7NJ42u63UeU="/>
         <field:select field="wEngId" id="c_biz_buildit_main_PlantHireRequest_wEngId" itemValue="id_" items="${worksengineers}" path="/worksengineers" z="Zip8H3yhL5jsBvpBe4d5qOwtNmo="/>
+        <field:select field="approval" id="c_biz_buildit_main_PlantHireRequest_approval" items="${approvals}" path="approvals" z="kvRIHsd84wT/KEHaIsW1RKHPwtU="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_biz_buildit_main_PlantHireRequest" render="${not empty dependencies}" z="CyvXSLEDCtQEZ4p74FLR9xOEeR4="/>
 </div>

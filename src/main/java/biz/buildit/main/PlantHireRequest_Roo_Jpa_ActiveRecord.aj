@@ -28,9 +28,9 @@ privileged aspect PlantHireRequest_Roo_Jpa_ActiveRecord {
         return entityManager().createQuery("SELECT o FROM PlantHireRequest o", PlantHireRequest.class).getResultList();
     }
     
-    public static PlantHireRequest PlantHireRequest.findPlantHireRequest(Long id_) {
-        if (id_ == null) return null;
-        return entityManager().find(PlantHireRequest.class, id_);
+    public static PlantHireRequest PlantHireRequest.findPlantHireRequest(Long id) {
+        if (id == null) return null;
+        return entityManager().find(PlantHireRequest.class, id);
     }
     
     public static List<PlantHireRequest> PlantHireRequest.findPlantHireRequestEntries(int firstResult, int maxResults) {
@@ -49,7 +49,7 @@ privileged aspect PlantHireRequest_Roo_Jpa_ActiveRecord {
         if (this.entityManager.contains(this)) {
             this.entityManager.remove(this);
         } else {
-            PlantHireRequest attached = PlantHireRequest.findPlantHireRequest(this.id_);
+            PlantHireRequest attached = PlantHireRequest.findPlantHireRequest(this.id);
             this.entityManager.remove(attached);
         }
     }

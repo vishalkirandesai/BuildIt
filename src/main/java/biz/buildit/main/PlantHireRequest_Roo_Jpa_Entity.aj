@@ -17,19 +17,19 @@ privileged aspect PlantHireRequest_Roo_Jpa_Entity {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id_")
-    private Long PlantHireRequest.id_;
+    @Column(name = "id")
+    private Long PlantHireRequest.id;
     
     @Version
     @Column(name = "version")
     private Integer PlantHireRequest.version;
     
-    public Long PlantHireRequest.getId_() {
-        return this.id_;
+    public Long PlantHireRequest.getId() {
+        return this.id;
     }
     
-    public void PlantHireRequest.setId_(Long id) {
-        this.id_ = id;
+    public void PlantHireRequest.setId(Long id) {
+        this.id = id;
     }
     
     public Integer PlantHireRequest.getVersion() {

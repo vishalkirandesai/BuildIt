@@ -8,5 +8,6 @@
         <field:display field="description" id="s_biz_buildit_main_PlantCatalogue_description" object="${plantcatalogue}" z="Q18nQwe3LrejwIEx3jhIh1vHcIk="/>
         <field:display date="true" dateTimePattern="${plantCatalogue_startdate_date_format}" field="startDate" id="s_biz_buildit_main_PlantCatalogue_startDate" object="${plantcatalogue}" z="PnXIzrlK+rEL7Pml0aTaDdPI5Xk="/>
         <field:display date="true" dateTimePattern="${plantCatalogue_enddate_date_format}" field="endDate" id="s_biz_buildit_main_PlantCatalogue_endDate" object="${plantcatalogue}" z="/PsoUWuz4TbZPgzvoy+xDZWOPsk="/>
+        <field:display field="name" id="s_biz_buildit_main_PlantCatalogue_name" object="${plantcatalogue}" z="VBI4mToh44jaAcsQlpulFehyy2E="/>
     </page:show>
 </div>

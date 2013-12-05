@@ -1,66 +1,47 @@
-package biz.buildit.main;
+package biz.buildit.rest;
+
 import java.util.Date;
 
-import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.xml.bind.annotation.XmlRootElement;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.javabean.RooJavaBean;
-import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
-import org.springframework.roo.addon.tostring.RooToString;
 
+import biz.buildit.main.PlantCatalogue;
+import biz.buildit.main.SiteEngineer;
+import biz.buildit.main.WorksEngineer;
 import biz.buildit.util.Approval;
 
 @RooJavaBean
-@RooToString
-@RooJpaActiveRecord
-public class PlantHireRequest {
-////
+@XmlRootElement(name="planthirerequest")
+public class PlantHireRequestResource {
 
-    /**
-     */
+    private long id;
+
     private int siteId;
 
-    /**
-     */
-    @ManyToOne
     private SiteEngineer engId;
 
-    /**
-     */
     @Temporal(TemporalType.TIMESTAMP)
     @DateTimeFormat(style = "M-")
     private Date startDate;
 
-    /**
-     */
     @Temporal(TemporalType.TIMESTAMP)
     @DateTimeFormat(style = "M-")
     private Date endDate;
 
-    /**
-     */
     @Temporal(TemporalType.TIMESTAMP)
     @DateTimeFormat(style = "M-")
     private Date extensionDate;
 
-    /**
-     */
     private int price;
 
-    /**
-     */
     private String comments;
 
-    /**
-     */
-    @ManyToOne
     private PlantCatalogue plantId;
 
-    /**
-     */
-    @ManyToOne
     private WorksEngineer wEngId;
     
     private Approval approval;

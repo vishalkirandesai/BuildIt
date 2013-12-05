@@ -7,17 +7,10 @@ import biz.buildit.main.PlantCatalogue;
 import biz.buildit.main.PlantHireRequest;
 import biz.buildit.main.SiteEngineer;
 import biz.buildit.main.WorksEngineer;
+import biz.buildit.util.Approval;
 import java.util.Date;
 
 privileged aspect PlantHireRequest_Roo_JavaBean {
-    
-    public int PlantHireRequest.getId() {
-        return this.id;
-    }
-    
-    public void PlantHireRequest.setId(int id) {
-        this.id = id;
-    }
     
     public int PlantHireRequest.getSiteId() {
         return this.siteId;
@@ -75,14 +68,6 @@ privileged aspect PlantHireRequest_Roo_JavaBean {
         this.comments = comments;
     }
     
-    public String PlantHireRequest.getApproval() {
-        return this.approval;
-    }
-    
-    public void PlantHireRequest.setApproval(String approval) {
-        this.approval = approval;
-    }
-    
     public PlantCatalogue PlantHireRequest.getPlantId() {
         return this.plantId;
     }
@@ -97,6 +82,14 @@ privileged aspect PlantHireRequest_Roo_JavaBean {
     
     public void PlantHireRequest.setWEngId(WorksEngineer wEngId) {
         this.wEngId = wEngId;
+    }
+    
+    public Approval PlantHireRequest.getApproval() {
+        return this.approval;
+    }
+    
+    public void PlantHireRequest.setApproval(Approval approval) {
+        this.approval = approval;
     }
     
 }
