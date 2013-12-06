@@ -51,3 +51,20 @@ field string --fieldName approval
 // Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-30 17:08:26
 // Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-30 17:08:41
 web mvc all --package ~.web
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-11-27 18:04:09
+repository jpa --interface ~.repository.PlantHireRequestRepository --entity ~.main.PlantHireRequest
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-11-27 19:52:22
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-11-28 19:22:15
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-11-28 23:54:44
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-11-28 23:57:17
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-11-30 01:16:29
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-11-30 01:26:00
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-11-30 01:36:13
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-11-30 01:47:52
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-12-01 12:11:22
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-12-01 15:01:29
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-12-01 15:53:30
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-12-01 16:35:06
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-12-05 11:43:48
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-12-05 14:26:24
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-12-05 19:14:18

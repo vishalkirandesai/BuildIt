@@ -23,5 +23,9 @@
             <menu:item id="i_worksengineer_new" messageCode="global_menu_new" url="/worksengineers?form" z="RlxG2L6PLamhmkrzmbME9WTS4RE="/>
             <menu:item id="i_worksengineer_list" messageCode="global_menu_list" url="/worksengineers?page=1&amp;size=${empty param.size ? 10 : param.size}" z="uIwta2ukihqRxsCSckw0Rrx8vQU="/>
         </menu:category>
+        <menu:category id="c_plant" z="HdutPA2/qByUmXrGQqzl91rhKKQ=">
+            <menu:item id="i_plant_new" messageCode="global_menu_new" url="/plantcatalogues?form" z="o+rtxzJRyIj/viuwr8KL6ZRnROo="/>
+            <menu:item id="i_plant_list" messageCode="global_menu_list" url="/plantcatalogues?page=1&amp;size=${empty param.size ? 10 : param.size}" z="bd8TPknHV3o2dIeCSDXuv1Arq3U="/>
+        </menu:category>
     </menu:menu>
 </div>

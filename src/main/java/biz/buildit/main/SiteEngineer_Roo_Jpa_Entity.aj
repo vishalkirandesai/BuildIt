@@ -17,19 +17,19 @@ privileged aspect SiteEngineer_Roo_Jpa_Entity {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id_")
-    private Long SiteEngineer.id_;
+    @Column(name = "id")
+    private Long SiteEngineer.id;
     
     @Version
     @Column(name = "version")
     private Integer SiteEngineer.version;
     
-    public Long SiteEngineer.getId_() {
-        return this.id_;
+    public Long SiteEngineer.getId() {
+        return this.id;
     }
     
-    public void SiteEngineer.setId_(Long id) {
-        this.id_ = id;
+    public void SiteEngineer.setId(Long id) {
+        this.id = id;
     }
     
     public Integer SiteEngineer.getVersion() {

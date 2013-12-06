@@ -7,14 +7,6 @@ import biz.buildit.main.SiteEngineer;
 
 privileged aspect SiteEngineer_Roo_JavaBean {
     
-    public int SiteEngineer.getId() {
-        return this.id;
-    }
-    
-    public void SiteEngineer.setId(int id) {
-        this.id = id;
-    }
-    
     public String SiteEngineer.getName() {
         return this.name;
     }

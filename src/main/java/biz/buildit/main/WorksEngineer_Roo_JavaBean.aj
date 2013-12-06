@@ -7,14 +7,6 @@ import biz.buildit.main.WorksEngineer;
 
 privileged aspect WorksEngineer_Roo_JavaBean {
     
-    public int WorksEngineer.getId() {
-        return this.id;
-    }
-    
-    public void WorksEngineer.setId(int id) {
-        this.id = id;
-    }
-    
     public String WorksEngineer.getName() {
         return this.name;
     }

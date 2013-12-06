@@ -4,11 +4,13 @@
 package biz.buildit.web;
 
 import biz.buildit.main.Invoice;
-import biz.buildit.main.PlantCatalogue;
+import biz.buildit.main.Plant;
 import biz.buildit.main.PlantHireRequest;
 import biz.buildit.main.SiteEngineer;
 import biz.buildit.main.WorksEngineer;
+import biz.buildit.repository.PlantHireRequestRepository;
 import biz.buildit.web.ApplicationConversionServiceFactoryBean;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.format.FormatterRegistry;
@@ -16,6 +18,9 @@ import org.springframework.format.FormatterRegistry;
 privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService {
     
     declare @type: ApplicationConversionServiceFactoryBean: @Configurable;
+    
+    @Autowired
+    PlantHireRequestRepository ApplicationConversionServiceFactoryBean.plantHireRequestRepository;
     
     public Converter<Invoice, String> ApplicationConversionServiceFactoryBean.getInvoiceToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<biz.buildit.main.Invoice, java.lang.String>() {
@@ -41,26 +46,26 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         };
     }
     
-    public Converter<PlantCatalogue, String> ApplicationConversionServiceFactoryBean.getPlantCatalogueToStringConverter() {
-        return new org.springframework.core.convert.converter.Converter<biz.buildit.main.PlantCatalogue, java.lang.String>() {
-            public String convert(PlantCatalogue plantCatalogue) {
-                return new StringBuilder().append(plantCatalogue.getId()).append(' ').append(plantCatalogue.getPrice()).append(' ').append(plantCatalogue.getDescription()).append(' ').append(plantCatalogue.getStartDate()).toString();
+    public Converter<Plant, String> ApplicationConversionServiceFactoryBean.getPlantToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<biz.buildit.main.Plant, java.lang.String>() {
+            public String convert(Plant plant) {
+                return new StringBuilder().append(plant.getName()).append(' ').append(plant.getPrice()).append(' ').append(plant.getDescription()).append(' ').append(plant.getStartDate()).toString();
             }
         };
     }
     
-    public Converter<Long, PlantCatalogue> ApplicationConversionServiceFactoryBean.getIdToPlantCatalogueConverter() {
-        return new org.springframework.core.convert.converter.Converter<java.lang.Long, biz.buildit.main.PlantCatalogue>() {
-            public biz.buildit.main.PlantCatalogue convert(java.lang.Long id) {
-                return PlantCatalogue.findPlantCatalogue(id);
+    public Converter<Long, Plant> ApplicationConversionServiceFactoryBean.getIdToPlantConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, biz.buildit.main.Plant>() {
+            public biz.buildit.main.Plant convert(java.lang.Long id) {
+                return Plant.findPlant(id);
             }
         };
     }
     
-    public Converter<String, PlantCatalogue> ApplicationConversionServiceFactoryBean.getStringToPlantCatalogueConverter() {
-        return new org.springframework.core.convert.converter.Converter<java.lang.String, biz.buildit.main.PlantCatalogue>() {
-            public biz.buildit.main.PlantCatalogue convert(String id) {
-                return getObject().convert(getObject().convert(id, Long.class), PlantCatalogue.class);
+    public Converter<String, Plant> ApplicationConversionServiceFactoryBean.getStringToPlantConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, biz.buildit.main.Plant>() {
+            public biz.buildit.main.Plant convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), Plant.class);
             }
         };
     }
@@ -68,7 +73,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<PlantHireRequest, String> ApplicationConversionServiceFactoryBean.getPlantHireRequestToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<biz.buildit.main.PlantHireRequest, java.lang.String>() {
             public String convert(PlantHireRequest plantHireRequest) {
-                return new StringBuilder().append(plantHireRequest.getId()).append(' ').append(plantHireRequest.getSiteId()).append(' ').append(plantHireRequest.getStartDate()).append(' ').append(plantHireRequest.getEndDate()).toString();
+                return new StringBuilder().append(plantHireRequest.getSiteId()).append(' ').append(plantHireRequest.getStartDate()).append(' ').append(plantHireRequest.getEndDate()).append(' ').append(plantHireRequest.getExtensionDate()).toString();
             }
         };
     }
@@ -76,7 +81,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<Long, PlantHireRequest> ApplicationConversionServiceFactoryBean.getIdToPlantHireRequestConverter() {
         return new org.springframework.core.convert.converter.Converter<java.lang.Long, biz.buildit.main.PlantHireRequest>() {
             public biz.buildit.main.PlantHireRequest convert(java.lang.Long id) {
-                return PlantHireRequest.findPlantHireRequest(id);
+                return plantHireRequestRepository.findOne(id);
             }
         };
     }
@@ -92,7 +97,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<SiteEngineer, String> ApplicationConversionServiceFactoryBean.getSiteEngineerToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<biz.buildit.main.SiteEngineer, java.lang.String>() {
             public String convert(SiteEngineer siteEngineer) {
-                return new StringBuilder().append(siteEngineer.getId()).append(' ').append(siteEngineer.getName()).toString();
+                return new StringBuilder().append(siteEngineer.getName()).toString();
             }
         };
     }
@@ -116,7 +121,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<WorksEngineer, String> ApplicationConversionServiceFactoryBean.getWorksEngineerToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<biz.buildit.main.WorksEngineer, java.lang.String>() {
             public String convert(WorksEngineer worksEngineer) {
-                return new StringBuilder().append(worksEngineer.getId()).append(' ').append(worksEngineer.getName()).toString();
+                return new StringBuilder().append(worksEngineer.getName()).toString();
             }
         };
     }
@@ -141,9 +146,9 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         registry.addConverter(getInvoiceToStringConverter());
         registry.addConverter(getIdToInvoiceConverter());
         registry.addConverter(getStringToInvoiceConverter());
-        registry.addConverter(getPlantCatalogueToStringConverter());
-        registry.addConverter(getIdToPlantCatalogueConverter());
-        registry.addConverter(getStringToPlantCatalogueConverter());
+        registry.addConverter(getPlantToStringConverter());
+        registry.addConverter(getIdToPlantConverter());
+        registry.addConverter(getStringToPlantConverter());
         registry.addConverter(getPlantHireRequestToStringConverter());
         registry.addConverter(getIdToPlantHireRequestConverter());
         registry.addConverter(getStringToPlantHireRequestConverter());

@@ -3,7 +3,7 @@
 
 package biz.buildit.web;
 
-import biz.buildit.main.PlantCatalogue;
+import biz.buildit.main.Plant;
 import biz.buildit.web.PlantCatalogueController;
 import java.io.UnsupportedEncodingException;
 import javax.servlet.http.HttpServletRequest;
@@ -22,27 +22,27 @@ import org.springframework.web.util.WebUtils;
 privileged aspect PlantCatalogueController_Roo_Controller {
     
     @RequestMapping(method = RequestMethod.POST, produces = "text/html")
-    public String PlantCatalogueController.create(@Valid PlantCatalogue plantCatalogue, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
+    public String PlantCatalogueController.create(@Valid Plant plant, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
         if (bindingResult.hasErrors()) {
-            populateEditForm(uiModel, plantCatalogue);
+            populateEditForm(uiModel, plant);
             return "plantcatalogues/create";
         }
         uiModel.asMap().clear();
-        plantCatalogue.persist();
-        return "redirect:/plantcatalogues/" + encodeUrlPathSegment(plantCatalogue.getId_().toString(), httpServletRequest);
+        plant.persist();
+        return "redirect:/plantcatalogues/" + encodeUrlPathSegment(plant.getId().toString(), httpServletRequest);
     }
     
     @RequestMapping(params = "form", produces = "text/html")
     public String PlantCatalogueController.createForm(Model uiModel) {
-        populateEditForm(uiModel, new PlantCatalogue());
+        populateEditForm(uiModel, new Plant());
         return "plantcatalogues/create";
     }
     
-    @RequestMapping(value = "/{id_}", produces = "text/html")
-    public String PlantCatalogueController.show(@PathVariable("id_") Long id_, Model uiModel) {
+    @RequestMapping(value = "/{id}", produces = "text/html")
+    public String PlantCatalogueController.show(@PathVariable("id") Long id, Model uiModel) {
         addDateTimeFormatPatterns(uiModel);
-        uiModel.addAttribute("plantcatalogue", PlantCatalogue.findPlantCatalogue(id_));
-        uiModel.addAttribute("itemId", id_);
+        uiModel.addAttribute("plant", Plant.findPlant(id));
+        uiModel.addAttribute("itemId", id);
         return "plantcatalogues/show";
     }
     
@@ -51,37 +51,37 @@ privileged aspect PlantCatalogueController_Roo_Controller {
         if (page != null || size != null) {
             int sizeNo = size == null ? 10 : size.intValue();
             final int firstResult = page == null ? 0 : (page.intValue() - 1) * sizeNo;
-            uiModel.addAttribute("plantcatalogues", PlantCatalogue.findPlantCatalogueEntries(firstResult, sizeNo));
-            float nrOfPages = (float) PlantCatalogue.countPlantCatalogues() / sizeNo;
+            uiModel.addAttribute("plants", Plant.findPlantEntries(firstResult, sizeNo));
+            float nrOfPages = (float) Plant.countPlants() / sizeNo;
             uiModel.addAttribute("maxPages", (int) ((nrOfPages > (int) nrOfPages || nrOfPages == 0.0) ? nrOfPages + 1 : nrOfPages));
         } else {
-            uiModel.addAttribute("plantcatalogues", PlantCatalogue.findAllPlantCatalogues());
+            uiModel.addAttribute("plants", Plant.findAllPlants());
         }
         addDateTimeFormatPatterns(uiModel);
         return "plantcatalogues/list";
     }
     
     @RequestMapping(method = RequestMethod.PUT, produces = "text/html")
-    public String PlantCatalogueController.update(@Valid PlantCatalogue plantCatalogue, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
+    public String PlantCatalogueController.update(@Valid Plant plant, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
         if (bindingResult.hasErrors()) {
-            populateEditForm(uiModel, plantCatalogue);
+            populateEditForm(uiModel, plant);
             return "plantcatalogues/update";
         }
         uiModel.asMap().clear();
-        plantCatalogue.merge();
-        return "redirect:/plantcatalogues/" + encodeUrlPathSegment(plantCatalogue.getId_().toString(), httpServletRequest);
+        plant.merge();
+        return "redirect:/plantcatalogues/" + encodeUrlPathSegment(plant.getId().toString(), httpServletRequest);
     }
     
-    @RequestMapping(value = "/{id_}", params = "form", produces = "text/html")
-    public String PlantCatalogueController.updateForm(@PathVariable("id_") Long id_, Model uiModel) {
-        populateEditForm(uiModel, PlantCatalogue.findPlantCatalogue(id_));
+    @RequestMapping(value = "/{id}", params = "form", produces = "text/html")
+    public String PlantCatalogueController.updateForm(@PathVariable("id") Long id, Model uiModel) {
+        populateEditForm(uiModel, Plant.findPlant(id));
         return "plantcatalogues/update";
     }
     
-    @RequestMapping(value = "/{id_}", method = RequestMethod.DELETE, produces = "text/html")
-    public String PlantCatalogueController.delete(@PathVariable("id_") Long id_, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
-        PlantCatalogue plantCatalogue = PlantCatalogue.findPlantCatalogue(id_);
-        plantCatalogue.remove();
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE, produces = "text/html")
+    public String PlantCatalogueController.delete(@PathVariable("id") Long id, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
+        Plant plant = Plant.findPlant(id);
+        plant.remove();
         uiModel.asMap().clear();
         uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
         uiModel.addAttribute("size", (size == null) ? "10" : size.toString());
@@ -89,12 +89,12 @@ privileged aspect PlantCatalogueController_Roo_Controller {
     }
     
     void PlantCatalogueController.addDateTimeFormatPatterns(Model uiModel) {
-        uiModel.addAttribute("plantCatalogue_startdate_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
-        uiModel.addAttribute("plantCatalogue_enddate_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
+        uiModel.addAttribute("plant_startdate_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
+        uiModel.addAttribute("plant_enddate_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
     }
     
-    void PlantCatalogueController.populateEditForm(Model uiModel, PlantCatalogue plantCatalogue) {
-        uiModel.addAttribute("plantCatalogue", plantCatalogue);
+    void PlantCatalogueController.populateEditForm(Model uiModel, Plant plant) {
+        uiModel.addAttribute("plant", plant);
         addDateTimeFormatPatterns(uiModel);
     }
     

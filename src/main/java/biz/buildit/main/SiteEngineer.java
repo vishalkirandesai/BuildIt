@@ -10,9 +10,5 @@ public class SiteEngineer {
 
     /**
      */
-    private int id;
-
-    /**
-     */
     private String name;
 }

@@ -17,19 +17,19 @@ privileged aspect WorksEngineer_Roo_Jpa_Entity {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id_")
-    private Long WorksEngineer.id_;
+    @Column(name = "id")
+    private Long WorksEngineer.id;
     
     @Version
     @Column(name = "version")
     private Integer WorksEngineer.version;
     
-    public Long WorksEngineer.getId_() {
-        return this.id_;
+    public Long WorksEngineer.getId() {
+        return this.id;
     }
     
-    public void WorksEngineer.setId_(Long id) {
-        this.id_ = id;
+    public void WorksEngineer.setId(Long id) {
+        this.id = id;
     }
     
     public Integer WorksEngineer.getVersion() {

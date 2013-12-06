@@ -10,9 +10,5 @@ public class WorksEngineer {
 
     /**
      */
-    private int id;
-
-    /**
-     */
     private String name;
 }

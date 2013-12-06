@@ -28,9 +28,9 @@ privileged aspect WorksEngineer_Roo_Jpa_ActiveRecord {
         return entityManager().createQuery("SELECT o FROM WorksEngineer o", WorksEngineer.class).getResultList();
     }
     
-    public static WorksEngineer WorksEngineer.findWorksEngineer(Long id_) {
-        if (id_ == null) return null;
-        return entityManager().find(WorksEngineer.class, id_);
+    public static WorksEngineer WorksEngineer.findWorksEngineer(Long id) {
+        if (id == null) return null;
+        return entityManager().find(WorksEngineer.class, id);
     }
     
     public static List<WorksEngineer> WorksEngineer.findWorksEngineerEntries(int firstResult, int maxResults) {
@@ -49,7 +49,7 @@ privileged aspect WorksEngineer_Roo_Jpa_ActiveRecord {
         if (this.entityManager.contains(this)) {
             this.entityManager.remove(this);
         } else {
-            WorksEngineer attached = WorksEngineer.findWorksEngineer(this.id_);
+            WorksEngineer attached = WorksEngineer.findWorksEngineer(this.id);
             this.entityManager.remove(attached);
         }
     }

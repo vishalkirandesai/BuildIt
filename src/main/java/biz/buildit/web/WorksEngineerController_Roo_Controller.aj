@@ -27,7 +27,7 @@ privileged aspect WorksEngineerController_Roo_Controller {
         }
         uiModel.asMap().clear();
         worksEngineer.persist();
-        return "redirect:/worksengineers/" + encodeUrlPathSegment(worksEngineer.getId_().toString(), httpServletRequest);
+        return "redirect:/worksengineers/" + encodeUrlPathSegment(worksEngineer.getId().toString(), httpServletRequest);
     }
     
     @RequestMapping(params = "form", produces = "text/html")
@@ -36,10 +36,10 @@ privileged aspect WorksEngineerController_Roo_Controller {
         return "worksengineers/create";
     }
     
-    @RequestMapping(value = "/{id_}", produces = "text/html")
-    public String WorksEngineerController.show(@PathVariable("id_") Long id_, Model uiModel) {
-        uiModel.addAttribute("worksengineer", WorksEngineer.findWorksEngineer(id_));
-        uiModel.addAttribute("itemId", id_);
+    @RequestMapping(value = "/{id}", produces = "text/html")
+    public String WorksEngineerController.show(@PathVariable("id") Long id, Model uiModel) {
+        uiModel.addAttribute("worksengineer", WorksEngineer.findWorksEngineer(id));
+        uiModel.addAttribute("itemId", id);
         return "worksengineers/show";
     }
     
@@ -65,18 +65,18 @@ privileged aspect WorksEngineerController_Roo_Controller {
         }
         uiModel.asMap().clear();
         worksEngineer.merge();
-        return "redirect:/worksengineers/" + encodeUrlPathSegment(worksEngineer.getId_().toString(), httpServletRequest);
+        return "redirect:/worksengineers/" + encodeUrlPathSegment(worksEngineer.getId().toString(), httpServletRequest);
     }
     
-    @RequestMapping(value = "/{id_}", params = "form", produces = "text/html")
-    public String WorksEngineerController.updateForm(@PathVariable("id_") Long id_, Model uiModel) {
-        populateEditForm(uiModel, WorksEngineer.findWorksEngineer(id_));
+    @RequestMapping(value = "/{id}", params = "form", produces = "text/html")
+    public String WorksEngineerController.updateForm(@PathVariable("id") Long id, Model uiModel) {
+        populateEditForm(uiModel, WorksEngineer.findWorksEngineer(id));
         return "worksengineers/update";
     }
     
-    @RequestMapping(value = "/{id_}", method = RequestMethod.DELETE, produces = "text/html")
-    public String WorksEngineerController.delete(@PathVariable("id_") Long id_, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
-        WorksEngineer worksEngineer = WorksEngineer.findWorksEngineer(id_);
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE, produces = "text/html")
+    public String WorksEngineerController.delete(@PathVariable("id") Long id, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
+        WorksEngineer worksEngineer = WorksEngineer.findWorksEngineer(id);
         worksEngineer.remove();
         uiModel.asMap().clear();
         uiModel.addAttribute("page", (page == null) ? "1" : page.toString());

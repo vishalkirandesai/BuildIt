@@ -27,7 +27,7 @@ privileged aspect SiteEngineerController_Roo_Controller {
         }
         uiModel.asMap().clear();
         siteEngineer.persist();
-        return "redirect:/siteengineers/" + encodeUrlPathSegment(siteEngineer.getId_().toString(), httpServletRequest);
+        return "redirect:/siteengineers/" + encodeUrlPathSegment(siteEngineer.getId().toString(), httpServletRequest);
     }
     
     @RequestMapping(params = "form", produces = "text/html")
@@ -36,10 +36,10 @@ privileged aspect SiteEngineerController_Roo_Controller {
         return "siteengineers/create";
     }
     
-    @RequestMapping(value = "/{id_}", produces = "text/html")
-    public String SiteEngineerController.show(@PathVariable("id_") Long id_, Model uiModel) {
-        uiModel.addAttribute("siteengineer", SiteEngineer.findSiteEngineer(id_));
-        uiModel.addAttribute("itemId", id_);
+    @RequestMapping(value = "/{id}", produces = "text/html")
+    public String SiteEngineerController.show(@PathVariable("id") Long id, Model uiModel) {
+        uiModel.addAttribute("siteengineer", SiteEngineer.findSiteEngineer(id));
+        uiModel.addAttribute("itemId", id);
         return "siteengineers/show";
     }
     
@@ -65,18 +65,18 @@ privileged aspect SiteEngineerController_Roo_Controller {
         }
         uiModel.asMap().clear();
         siteEngineer.merge();
-        return "redirect:/siteengineers/" + encodeUrlPathSegment(siteEngineer.getId_().toString(), httpServletRequest);
+        return "redirect:/siteengineers/" + encodeUrlPathSegment(siteEngineer.getId().toString(), httpServletRequest);
     }
     
-    @RequestMapping(value = "/{id_}", params = "form", produces = "text/html")
-    public String SiteEngineerController.updateForm(@PathVariable("id_") Long id_, Model uiModel) {
-        populateEditForm(uiModel, SiteEngineer.findSiteEngineer(id_));
+    @RequestMapping(value = "/{id}", params = "form", produces = "text/html")
+    public String SiteEngineerController.updateForm(@PathVariable("id") Long id, Model uiModel) {
+        populateEditForm(uiModel, SiteEngineer.findSiteEngineer(id));
         return "siteengineers/update";
     }
     
-    @RequestMapping(value = "/{id_}", method = RequestMethod.DELETE, produces = "text/html")
-    public String SiteEngineerController.delete(@PathVariable("id_") Long id_, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
-        SiteEngineer siteEngineer = SiteEngineer.findSiteEngineer(id_);
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE, produces = "text/html")
+    public String SiteEngineerController.delete(@PathVariable("id") Long id, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
+        SiteEngineer siteEngineer = SiteEngineer.findSiteEngineer(id);
         siteEngineer.remove();
         uiModel.asMap().clear();
         uiModel.addAttribute("page", (page == null) ? "1" : page.toString());

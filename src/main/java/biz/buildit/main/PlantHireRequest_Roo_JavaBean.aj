@@ -3,21 +3,15 @@
 
 package biz.buildit.main;
 
-import biz.buildit.main.PlantCatalogue;
+import biz.buildit.main.Plant;
 import biz.buildit.main.PlantHireRequest;
 import biz.buildit.main.SiteEngineer;
 import biz.buildit.main.WorksEngineer;
+import biz.buildit.util.Approval;
+import java.net.URI;
 import java.util.Date;
 
 privileged aspect PlantHireRequest_Roo_JavaBean {
-    
-    public int PlantHireRequest.getId() {
-        return this.id;
-    }
-    
-    public void PlantHireRequest.setId(int id) {
-        this.id = id;
-    }
     
     public int PlantHireRequest.getSiteId() {
         return this.siteId;
@@ -27,12 +21,12 @@ privileged aspect PlantHireRequest_Roo_JavaBean {
         this.siteId = siteId;
     }
     
-    public SiteEngineer PlantHireRequest.getEngId() {
-        return this.engId;
+    public SiteEngineer PlantHireRequest.getSiteEng() {
+        return this.siteEng;
     }
     
-    public void PlantHireRequest.setEngId(SiteEngineer engId) {
-        this.engId = engId;
+    public void PlantHireRequest.setSiteEng(SiteEngineer siteEng) {
+        this.siteEng = siteEng;
     }
     
     public Date PlantHireRequest.getStartDate() {
@@ -59,14 +53,6 @@ privileged aspect PlantHireRequest_Roo_JavaBean {
         this.extensionDate = extensionDate;
     }
     
-    public int PlantHireRequest.getPrice() {
-        return this.price;
-    }
-    
-    public void PlantHireRequest.setPrice(int price) {
-        this.price = price;
-    }
-    
     public String PlantHireRequest.getComments() {
         return this.comments;
     }
@@ -75,28 +61,36 @@ privileged aspect PlantHireRequest_Roo_JavaBean {
         this.comments = comments;
     }
     
-    public String PlantHireRequest.getApproval() {
+    public Plant PlantHireRequest.getPlant() {
+        return this.plant;
+    }
+    
+    public void PlantHireRequest.setPlant(Plant plant) {
+        this.plant = plant;
+    }
+    
+    public WorksEngineer PlantHireRequest.getWEng() {
+        return this.wEng;
+    }
+    
+    public void PlantHireRequest.setWEng(WorksEngineer wEng) {
+        this.wEng = wEng;
+    }
+    
+    public Approval PlantHireRequest.getApproval() {
         return this.approval;
     }
     
-    public void PlantHireRequest.setApproval(String approval) {
+    public void PlantHireRequest.setApproval(Approval approval) {
         this.approval = approval;
     }
     
-    public PlantCatalogue PlantHireRequest.getPlantId() {
-        return this.plantId;
+    public URI PlantHireRequest.getPurchaseOrderId() {
+        return this.purchaseOrderId;
     }
     
-    public void PlantHireRequest.setPlantId(PlantCatalogue plantId) {
-        this.plantId = plantId;
-    }
-    
-    public WorksEngineer PlantHireRequest.getWEngId() {
-        return this.wEngId;
-    }
-    
-    public void PlantHireRequest.setWEngId(WorksEngineer wEngId) {
-        this.wEngId = wEngId;
+    public void PlantHireRequest.setPurchaseOrderId(URI purchaseOrderId) {
+        this.purchaseOrderId = purchaseOrderId;
     }
     
 }
